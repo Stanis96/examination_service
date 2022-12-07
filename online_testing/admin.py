@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import SetQuestionnaire, ListQuestion, OptionAnswer, Statistic
+
+
+admin.site.register(SetQuestionnaire)
+admin.site.register(ListQuestion)
+admin.site.register(OptionAnswer)
+admin.site.register(Statistic)
