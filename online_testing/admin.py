@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from .models import SetQuestionnaire, ListQuestion, OptionAnswer, Statistic
-
+from .models import ListQuestion, OptionAnswer, SetQuestionnaire, Statistic
 
 admin.site.register(SetQuestionnaire)
 admin.site.register(ListQuestion)
