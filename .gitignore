@@ -156,3 +156,8 @@ cython_debug/
 
 *.rdb
 *.identifier.sqlite
+
+# Static
+*.css
+*.js
+*.map

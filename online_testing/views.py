@@ -1,9 +1,13 @@
 from django.shortcuts import render, redirect
-from django.views.generic import View
+from django.views.generic import View, TemplateView
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
 from .forms import UserRegisterForm
+
+
+class IndexView(TemplateView):
+    template_name = "index.html"
 
 
 class UserRegisterView(View):
@@ -20,7 +24,7 @@ class UserRegisterView(View):
             user = authenticate(username=username, password=password)
             login(request, user)
             messages.success(request, f"Вы успешно зарегистрировались! Можете авторизоваться!")
-            return redirect("login")
+            return redirect("Login")
         else:
             form = UserRegisterForm()
         return render(request, "register.html", {"form": form})
