@@ -1,15 +1,15 @@
 <!-- Блок общих стилей -->
+{% load static %}
 <!doctype html>
 <html lang="en">
-{% load static %}
-  <head>
+   <head>
     <meta charset="utf-8">
-<link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+       <title>Home page</title>
+       <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous">
-  </head>
-
-  <body>
+   </head>
+   <body>
 <!-- Блок раскрытой панели навигации -->
 <header>
   <div class="collapse bg-dark" id="navbarHeader" style="">
@@ -34,8 +34,8 @@
 <!-- Блок закрытой панели навигации -->
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <strong>Сервис тестирования</strong>
+      <a href="{% url 'Home page' %}" class="navbar-brand d-flex align-items-center">
+        <strong>Сервис тестирования </strong>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
               aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 
-from online_testing.models import SetQuestionnaire, ListQuestion, OptionAnswer
+from online_testing.models import Questionnaire, Question, OptionAnswer
 
 
 class Command(BaseCommand):
@@ -17,18 +17,18 @@ class Command(BaseCommand):
             self.stdout.write(self.style.UNSECCESS("Вы ввели неверную команду"))
 
     def create_questionnaire(self):
-        questionnaire = SetQuestionnaire.objects.create(topic="Тестовый опросник")
+        questionnaire = Questionnaire.objects.create(topic="Тестовый опросник")
 
         for questions in range(1, 5):
             self.create_question(questionnaire, questions)
 
     def create_question(self, questionnaire, questions):
-        question = ListQuestion.objects.create(
+        question = Question.objects.create(
             question=f"Вопрос №{questions}", questionnaire=questionnaire
         )
         self.create_answer(question)
 
-    def create_answer(self, question):
+    def create_answer(self, question: OptionAnswer):
         OptionAnswer.objects.bulk_create(
             [
                 OptionAnswer(question=question, option="Неверно"),
